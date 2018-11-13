@@ -7,10 +7,10 @@
 </head>
 
 <body>
-	<h1>Aluno</h1> 
+	<h1>Aluno</h1>
 	<h2>Minhas Turmas</h2>
 	<form autocomplete="off" accept="image/jpg, image/png">
-		
+
 	<ul>
 	  <li><a href="turma_qualquer.html" class="link_turma">Matemática discreta</a><span class="close">&times;</span></li>
 	  <li><a href="turma_qualquer.html" class="link_turma">Engenharia de Software</a><span class="close">&times;</span></li>
@@ -20,7 +20,12 @@
 	  <li><a href="turma_qualquer.html" class="link_turma">LFA</a><span class="close">&times;</span></li>
 	  <li><a href="turma_qualquer.html" class="link_turma">Programação web</a><span class="close">&times;</span></li>
 	</ul>
-	
+	<span style="position: absolute; top: 500px; left: 450px;width: 500px; height: 0px">
+		<form autocomplete="off" accept="image/jpg, image/png">
+			<button class="turma">Inscrever</button>
+			<button class="turma">Sair</button>
+		</form>
+	</span>
 	<script>
 		var closebtns = document.getElementsByClassName("close");
 		var i;
@@ -31,7 +36,7 @@
 		  });
 		}
 	</script>
-		
+
 	</form>
 
 </body>
