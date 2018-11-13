@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário HTML - Cadastro</title>
+	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
+</head>
+
+<body>
+	<h1>AVAdesk - Autenticação de usuário</h1> 
+    <h2>Login</h2>
+    <form>
+
+      
+		E-mail:<br>
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" class="form-control" placeholder="exemplo@email.com">
+	  
+		Senha:<br>
+		<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+		<input type="password" class="form-control" placeholder="Mínimo de 8 dígitos" pattern="{8,}">
+		
+
+        <button type="submit" class="float">Login</button><br>
+		<button onClick="location.href='tela_cadastrar.html'">Cadastrar</button>
+      </form>
+</body>

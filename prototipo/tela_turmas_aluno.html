@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário HTML - Cadastro</title>
+	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
+</head>
+
+<body>
+	<h1>Aluno</h1> 
+	<h2>Minhas Turmas</h2>
+	<form autocomplete="off" accept="image/jpg, image/png">
+		
+	<ul>
+	  <li><a href="turma_qualquer.html" class="link_turma">Matemática discreta</a><span class="close">&times;</span></li>
+	  <li>Engenharia de Software<span class="close">&times;</span></li>
+
+	  <li>Estrutura de dados<span class="close">&times;</span></li>
+	  <li>Banco de dados 1<span class="close">&times;</span></li>
+
+	  <li>Algoritmos em grafos<span class="close">&times;</span></li>
+	  <li>LFA<span class="close">&times;</span></li>
+	  <li>Programação web<span class="close">&times;</span></li>
+	</ul>
+	
+	<script>
+		var closebtns = document.getElementsByClassName("close");
+		var i;
+
+		for (i = 0; i < closebtns.length; i++) {
+		  closebtns[i].addEventListener("click", function() {
+			this.parentElement.style.display = 'none';
+		  });
+		}
+	</script>
+		
+	</form>
+
+</body>
+</html>
