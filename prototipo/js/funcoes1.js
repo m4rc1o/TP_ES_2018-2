@@ -8,6 +8,12 @@ function carregarTelaIni(){
 	}
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function addItemLista() {
+
+    var texto = document.getElementById("txt_add_turma").value;
+
+    var li = document.createElement("li");
+  	li.appendChild(document.createTextNode(texto));
+
+    document.getElementById("lista_turmas").append(li);
 }

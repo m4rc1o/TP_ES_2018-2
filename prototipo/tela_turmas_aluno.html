@@ -4,38 +4,52 @@
 	<meta charset="UTF-8">
 	<title>Formulário HTML - Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
+	<script type="text/javascript" src="js/funcoes1.js"></script>
 </head>
+
+
+
 
 <body>
 	<h1>Aluno</h1>
 	<h2>Minhas Turmas</h2>
+
+	Adicionar turma:
+	<input type='text' id='txt_add_turma' placeholder="Digite o nome da turma"/>
+	<input type='button' value='Adicionar' id='btn_add_turma' onclick="addItemLista()" /><br>
+
 	<form autocomplete="off" accept="image/jpg, image/png">
 
-	<ul>
-	  <li><a href="turma_qualquer.html" class="link_turma">Matemática discreta</a><span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">Engenharia de Software</a><span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">Estrutura de dados</a><span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">Banco de dados 1<span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">Algoritmos em grafos</a><span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">LFA</a><span class="close">&times;</span></li>
-	  <li><a href="turma_qualquer.html" class="link_turma">Programação web</a><span class="close">&times;</span></li>
-	</ul>
-	<span style="position: absolute; top: 550px; left: 500px;width: 500px; height: 0px">
-		<form autocomplete="off" accept="image/jpg, image/png">
-			<button class="turma">Inscrever</button>
-			<button class="turma">Sair</button>
-		</form>
-	</span>
-	<script>
-		var closebtns = document.getElementsByClassName("close");
-		var i;
 
-		for (i = 0; i < closebtns.length; i++) {
-		  closebtns[i].addEventListener("click", function() {
-			this.parentElement.style.display = 'none';
-		  });
-		}
-	</script>
+		<ul id="lista_turmas">
+		  <li><a href="turma_qualquer.html" class="link_turma">Matemática discreta</a><span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">Engenharia de Software</a><span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">Estrutura de dados</a><span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">Banco de dados 1<span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">Algoritmos em grafos</a><span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">LFA</a><span class="close">&times;</span></li>
+		  <li><a href="turma_qualquer.html" class="link_turma">Programação web</a><span class="close">&times;</span></li>
+		</ul>
+
+		<!--
+		<span style="position: absolute; top: 550px; left: 500px;width: 500px; height: 0px">
+			<form autocomplete="off" accept="image/jpg, image/png">
+				<button class="turma">Inscrever</button>
+				<button class="turma">Sair</button>
+			</form>
+		</span>
+		-->
+
+		<script>
+			var closebtns = document.getElementsByClassName("close");
+			var i;
+
+			for (i = 0; i < closebtns.length; i++) {
+			  closebtns[i].addEventListener("click", function() {
+				this.parentElement.style.display = 'none';
+			  });
+			}
+		</script>
 
 	</form>
 
