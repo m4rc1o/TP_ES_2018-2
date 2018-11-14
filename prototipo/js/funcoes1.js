@@ -8,6 +8,14 @@ function carregarTelaIni(){
 	}
 }
 
+function carregarTelaCadastro() {
+	window.open("tela_cadastrar.html", "_self");
+}
+
+function carregarTelaIniLogin() {
+	window.open("tela_turmas_aluno.html", "_self");
+}
+
 function addItemLista() {
 
     var texto = document.getElementById("txt_add_turma").value;
