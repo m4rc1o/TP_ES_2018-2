@@ -10,10 +10,18 @@ function carregarTelaIni(){
 
 function addItemLista() {
 
-    var texto = document.getElementById("txt_add_turma").value;
+    var texto = document.getElementById("txt_turma_add").value;
 
     var li = document.createElement("li");
-  	li.appendChild(document.createTextNode(texto));
+    li.innerHTML = '<a href="turma_qualquer.html" class="link_turma"' +
+    	'title="Ver detalhes da turma">' + texto + '</a><span class="close"' +
+    	' title="Desinscrever-se">&times;</span>';
+    //<li><a href="turma_qualquer.html" class="link_turma">Matemática discreta</a><span class="close">&times;</span></li>
 
-    document.getElementById("lista_turmas").append(li);
+    document.querySelector('.content').append(li);
+
+    var closebtns = document.getElementsByClassName("close");
+    closebtns[closebtns.length - 1].addEventListener("click", function() {
+				this.parentElement.style.display = 'none';
+			  });
 }
