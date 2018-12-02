@@ -1,3 +1,6 @@
+CREATE SCHEMA avadesk;
+USE avadesk;
+
 CREATE TABLE Usuario ( -- professor e aluno tem os mesmos atributos mas para envolver 3 tabelas vamos ter que fazer herança
     cpf char(11) NOT NULL,
     nome varchar(60) NOT NULL,
