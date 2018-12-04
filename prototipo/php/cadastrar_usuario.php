@@ -4,21 +4,8 @@
 	<title></title>
 </head>
 <body>
-
+	<?php include 'conexao.php';?>
 	<?php
-		
-		header('Content-Type: text/html; charset=utf-8');
-
-		$nomeServidor = "localhost";
-		$nomeUsuario = "root";
-		$senha = "1111011";
-		$nomeBD = "avadesk";
-
-
-		// Cria a conexao
-		$conexao = mysqli_connect($nomeServidor, $nomeUsuario, $senha, $nomeBD);
-		
-
 		
 		// Verifica a conexao
 		if ($conexao->connect_error) {
@@ -29,12 +16,13 @@
 		$cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
 		$nome = mysqli_real_escape_string($conexao, $_POST['nome']);
 		$email = mysqli_real_escape_string($conexao, $_POST['email']);
+		$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 		$sexo = mysqli_real_escape_string($conexao, $_POST['sexo']);
 		$data_nasc = mysqli_real_escape_string($conexao, $_POST['data_nasc']);
 		$modalidade = mysqli_real_escape_string($conexao, $_POST['modalidade']);
 		
 		// String consulta
-		$sql = "INSERT INTO Usuario(cpf, nome, email, sexo, data_nasc, modalidade) VALUES ('$cpf', '$nome', '$email', '$sexo', '$data_nasc', '$modalidade')";
+		$sql = "INSERT INTO Usuario(cpf, nome, email, senha, sexo, data_nasc, modalidade) VALUES ('$cpf', '$nome', '$email', '$senha', '$sexo', '$data_nasc', '$modalidade')";
 
 		//$result = mysqli_query($conexao, $sql);
 		
