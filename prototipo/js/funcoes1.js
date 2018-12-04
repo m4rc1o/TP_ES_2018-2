@@ -52,3 +52,7 @@ function addItemListaProfessor() {
 				this.parentElement.style.display = 'none';
 			  });
 }
+
+function exibirTurmasDisponiveis() {
+	 var turma = "<?=$turma?>";
+}
