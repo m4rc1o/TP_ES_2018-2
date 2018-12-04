@@ -22,7 +22,9 @@ CREATE TABLE IF NOT EXISTS Turma (
     codigoTurma varchar(3) NOT NULL,
     vagas int NOT NULL,
     fk_codDisc char(6) NOT NULL,
+    fk_cpfProf char(11) NOT NULL,
     FOREIGN KEY (fk_codDisc) REFERENCES Disciplina(codDisc),
+    FOREIGN KEY (fk_cpfProf) REFERENCES Usuario(cpf),
     PRIMARY KEY (codigoTurma, fk_codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
@@ -37,14 +39,4 @@ CREATE TABLE IF NOT EXISTS Professor(
     cpf char(11) NOT NULL,
     salario int NOT NULL,
     FOREIGN KEY (cpf) REFERENCES Usuario(cpf)
-)CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-CREATE TABLE IF NOR EXISTS AlunoTurma (
-	fk_cpf char(11) NOT NULL,	
-	fk_codigoTurma varchar(3) NOT NULL,
-	fk_codDisc char(6) NOT NULL,
-	FOREIGN KEY (fk_cpf) REFERENCES Aluno(cpf),
-	FOREIGN KEY (fk_codigoTurma) REFERENCES Turma(codigoTurma),
-	FOREIGN KEY (fk_codDisc) REFERENCES Turma(fk_codDisc),
-	PRIMARY KEY (fk_cpf,fk_codigoTurma, fk_codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;

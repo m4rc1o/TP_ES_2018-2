@@ -8,13 +8,14 @@
 	<!-- A variável que contém a conexão chama-se $conexao -->
 	
 	<?php
-
+		session_start();
+		
 		// Recuperando os valores informados pelo usuário
 		$emailInformado = mysqli_real_escape_string($conexao, $_POST['email']);
 		$senhaInformada = mysqli_real_escape_string($conexao, $_POST['senha']);
 		
 		// String consulta
-		$sql = "SELECT email, senha, modalidade FROM Usuario WHERE email="."'$emailInformado'";
+		$sql = "SELECT cpf, email, senha, modalidade FROM Usuario WHERE email="."'$emailInformado'";
 		
 		$resultadoConsulta = mysqli_query($conexao, $sql);
 		
@@ -34,6 +35,9 @@
 					//Carrega a tela inicial do professor
 					header('Location: ../tela_turmas_professor.html');
 				}
+				
+				$_SESSION['loggedin'] = true;
+				$_SESSION['cpfUsuario'] = $linha['cpf'];
 				
 			}else{
 				echo "Senha inválida!";
