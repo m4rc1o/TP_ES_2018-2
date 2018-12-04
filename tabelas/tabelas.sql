@@ -1,15 +1,17 @@
 CREATE SCHEMA avadesk;
 USE avadesk;
 
+default-character-set=utf8
+
 CREATE TABLE Usuario ( -- professor e aluno tem os mesmos atributos mas para envolver 3 tabelas vamos ter que fazer herança
     cpf char(11) NOT NULL,
     nome varchar(60) NOT NULL,
     email varchar(50) NOT NULL,
-    sexo char(1),
+    sexo char(1), -- M OU F
     data_nasc date NOT NULL,
     modalidade char(1) NOT NULL, -- A OU P
     PRIMARY KEY (cpf)
-);
+)CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE Disciplina (
     codDisc char(6) NOT NULL,

@@ -12,6 +12,7 @@ function carregarTelaCadastro() {
 	window.open("tela_cadastrar.html", "_self");
 }
 
+
 function carregarTelaIniLogin() {
 	window.open("tela_turmas_aluno.html", "_self");
 }
