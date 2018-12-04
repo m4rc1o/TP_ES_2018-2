@@ -38,3 +38,13 @@ CREATE TABLE IF NOT EXISTS Professor(
     salario int NOT NULL,
     FOREIGN KEY (cpf) REFERENCES Usuario(cpf)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE TABLE IF NOR EXISTS AlunoTurma (
+	fk_cpf char(11) NOT NULL,	
+	fk_codigoTurma varchar(3) NOT NULL,
+	fk_codDisc char(6) NOT NULL,
+	FOREIGN KEY (fk_cpf) REFERENCES Aluno(cpf),
+	FOREIGN KEY (fk_codigoTurma) REFERENCES Turma(codigoTurma),
+	FOREIGN KEY (fk_codDisc) REFERENCES Turma(fk_codDisc),
+	PRIMARY KEY (fk_cpf,fk_codigoTurma, fk_codDisc)
+)CHARACTER SET utf8 COLLATE utf8_general_ci;
