@@ -14,25 +14,26 @@
 		$senhaInformada = mysqli_real_escape_string($conexao, $_POST['senha']);
 		
 		// String consulta
-		$sql = "SELECT email, senha FROM Usuario";
+		$sql = "SELECT email, senha FROM Usuario WHERE email="."'$emailInformado'";
 		
 		$resultadoConsulta = mysqli_query($conexao, $sql);
 		
-		echo  $resultadoConsulta->num_rows;
-		
-		/*
-		// Verifica se o usuário já está cadastrado
-		if($resultadoConsulta->num_rows > 0){
-			$linha = $;
-			if(linha['senha'] == $senhaInformada){
-				echo "Esta bitch lasagna encontra-se cadastrada no sitema!";
+		// Verifica se o usuário já está cadastrado e se a senha está correta
+		if($resultadoConsulta->num_rows == 1){
+			$linha = mysqli_fetch_assoc($resultadoConsulta);
+			
+			echo "Senha informada: ".$senhaInformada."\n";
+			echo "Senha cadastrada: ".$linha['senha']."\n";
+			
+			if($linha['senha'] == md5($senhaInformada)){
+				header('Location: ../tela_turmas_aluno.html');
+				
 			}else{
 				echo "Senha inválida!";
 			}
 		}else{
-			echo "Esta bitch lasagna não encontra-se cadastrada no sitema!";
+			echo "O usuário informado não está cadastrado no sitema!";
 		}
-		*/
 	?>
 
 </body>
