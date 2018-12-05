@@ -26,7 +26,7 @@
 
 		$result = mysqli_query($conexao, $sql);
 		
-		while($turmas[] = mysqli_fetch_assoc($result);
+		$turmas[] = $result->fetch_array();
 
 		// Executa a Inserção e informa o resultado
 		if ($conexao->query($sql) === TRUE) {
