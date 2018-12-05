@@ -13,15 +13,15 @@ CREATE TABLE IF NOT EXISTS Usuario ( -- professor e aluno tem os mesmos atributo
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS Disciplina (
-    codDisc char(6) NOT NULL,
+    codDisc varchar(8) NOT NULL,
     nomeDisc varchar(60),
     PRIMARY KEY (codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS Turma (
-    codigoTurma varchar(3) NOT NULL,
+    codigoTurma varchar(20) NOT NULL,
     vagas int NOT NULL,
-    codDisc char(6) NOT NULL,
+    codDisc varchar(8) NOT NULL,
     cpfProf char(11) NOT NULL,
     FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc),
     FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf),
@@ -50,3 +50,17 @@ CREATE TABLE IF NOT EXISTS AlunoTurma (
     FOREIGN KEY (cpfAluno) REFERENCES Aluno(cpf),
     PRIMARY KEY (cpfAluno, codigoTurma, codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+insert into Disciplina (codDisc, nomeDisc) values
+('DCC-ES', 'Engenharia de Software'),
+('DCC-SD', 'Sistemas Distribuídos'),
+('DCC-MD', 'Matemática Discreta'),
+('DCC-IHC', 'Interface Humano Computador'),
+('DCC-IA', 'Inteligência Artificial'),
+('DCC-ED', 'Estrutura de Dados'),
+('DCC-IC', 'Introdução à Computação'),
+('DCC-BD', 'Banco de dados'),
+('DCC-SGBD', 'Sistemas Gerenciadores de Bancos de Dados'),
+('DCC-LFA', 'Linguagens Formais e Autômatos'),
+('DCC-AG', 'Algoritmos em Grafos'),
+('DCC-PPO', 'Práticas Programação Orientada a Objetos');

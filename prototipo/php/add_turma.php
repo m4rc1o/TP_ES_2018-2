@@ -12,17 +12,15 @@
 		// Recuperando os valores informados pelo professor
 		$codTurma = mysqli_real_escape_string($conexao, $_POST['cod_turma']);
 		$qtdVagas = mysqli_real_escape_string($conexao, $_POST['vagas']);
+		$codDisc = mysqli_real_escape_string($conexao, $_POST['codDisc']);
 		$cpfProfessor = $_SESSION['cpfUsuario'];
-		
+
 		// String consulta
-		$sql = "INSERT INTO TABLE Turma VALUES(codigoTurma="."'$codTurma', vagas="."'$vagas')";	
-		$sql = "INSERT INTO Turma(codigoTurma, vagas) VALUES ('$codTurma', '$vagas')";	
-		
-		$resultadoConsulta = mysqli_query($conexao, $sql);
+		$sql = "INSERT INTO Turma(codigoTurma, vagas, codDisc, cpfProf) VALUES('$codTurma', '$qtdVagas', '$codDisc', '$cpfProfessor')";	
 		
 		// Executa a Inserção e informa o resultado
 		if ($conexao->query($sql) === TRUE) {
-		    echo "Novo turma inserida com sucesso!";
+		    echo "Nova turma inserida com sucesso!";
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conexao->error;
 		}

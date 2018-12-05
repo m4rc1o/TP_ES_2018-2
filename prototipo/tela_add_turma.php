@@ -11,7 +11,7 @@
 	<?php include 'php/conexao.php';?>
 
 	<h1>AVAdesk - Cadastro de turma</h1>
-	<form autocomplete="on" accept="image/jpg, image/png" action="#" method="post">
+	<form autocomplete="on" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/php/add_turma.php" method="post">
 		
 		<h2>Por favor, preencha os campos abaixo:</h2>
 		
@@ -22,7 +22,7 @@
 		<input type="number" name="vagas" placeholder="A quantidade de vagas ofertadas" maxlength="3" required><br><br>
 		
 		Selecione uma disciplina:<br>
-		<select name="owner">
+		<select name="codDisc">
 			<?php 
 				$sql = mysqli_query($conexao, "SELECT codDisc FROM Disciplina");
 				while ($linha = $sql->fetch_assoc()){

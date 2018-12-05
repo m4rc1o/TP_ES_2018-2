@@ -8,7 +8,6 @@
 		// Este arquivo serve serve de cabeçalho para todos os arquivos
 		// que realizam conexão com o banco de dados
 		
-		
 		header('Content-Type: text/html; charset=utf-8');
 
 		$nomeServidor = "localhost";

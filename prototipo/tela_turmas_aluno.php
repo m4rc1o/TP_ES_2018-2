@@ -11,8 +11,9 @@
 
 
 <body>
+	<?php session_start();?>
 	
-	<h1><? php echo $_SESSION['nomeUsuario'] ?></h1>
+	<h1><?php echo $_SESSION['nomeUsuario']; ?></h1>
 	<h2>Minhas Turmas</h2>
 
 	<form>
