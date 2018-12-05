@@ -42,16 +42,15 @@
 			return $r;
 		}
 		
-		function alterar() {
-			/*
-			$sql =  "UPDATE Usuario WHERE cpf = '".$u->getCpf()."'";
+		function alterar() {//depende dos dados que vamo inserir quando for alterar
+			$sql =  "UPDATE Usuario SET cpf ='$cpf', nome ='$nome', email ='$email', sexo ='$sexo', senha ='$senha', data_nasc ='$data_nasc', modalidade ='$modalidade' WHERE cpf = '".$u->getCpf()."'";
+			
 			$r = mysqli_query($link, $sql);
-			UPDATE empregados set nome='João da Silva',cidade='São Paulo' where codigo_empregado=2
 			if (!$r) {
 				die("Nao foi possivel excluir seus dados!<br>".mysqli_error($link));
 			}
 				
-			echo "Alterado com sucesso!";*/
+			echo "Alterado com sucesso!";
 		}
 		
 		function excluir($link, $u) {
