@@ -13,7 +13,7 @@
 
 		$nomeServidor = "localhost";
 		$nomeUsuario = "root";
-		$senha = "aluno";
+		$senha = "1111011";
 		$nomeBD = "avadesk";
 
 

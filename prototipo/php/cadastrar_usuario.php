@@ -6,7 +6,7 @@
 <body>
 	<?php include 'conexao.php';?>
 	<?php
-		
+
 		// Verifica a conexao
 		if ($conexao->connect_error) {
 		    die("A conexão falhou: " . $conexao->connect_error);

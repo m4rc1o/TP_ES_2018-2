@@ -8,10 +8,11 @@
 	<!-- A variável que contém a conexão chama-se $conexao -->
 	
 	<?php
-
+		session_start();
 		// Recuperando os valores informados pelo professor
 		$codTurma = mysqli_real_escape_string($conexao, $_POST['cod_turma']);
 		$qtdVagas = mysqli_real_escape_string($conexao, $_POST['vagas']);
+		$cpfProfessor = $_SESSION['cpfUsuario'];
 		
 		// String consulta
 		$sql = "INSERT INTO TABLE Turma VALUES(codigoTurma="."'$codTurma', vagas="."'$vagas')";	
@@ -25,7 +26,7 @@
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conexao->error;
 		}
-
+		
 		$conexao->close();
 	?>
 

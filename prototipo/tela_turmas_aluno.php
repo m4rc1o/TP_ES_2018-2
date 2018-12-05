@@ -12,7 +12,7 @@
 
 <body>
 	
-	<h1>Aluno</h1>
+	<h1><? php echo $_SESSION['nomeUsuario'] ?></h1>
 	<h2>Minhas Turmas</h2>
 
 	<form>

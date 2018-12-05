@@ -10,26 +10,18 @@
 <body>
 	<h1>Professor</h1>
 	<h2>Minhas Turmas</h2>
-	<form autocomplete="off" accept="image/jpg, image/png">
-	Gerenciar turmas:
-	<input type='text' id='txt_turma_add' placeholder="Digite o nome da turma"/>
-	<input type='button' value='Adicionar' id='btn_add_turma' onclick="addItemListaProfessor()" />
-  	<!--<input type='button' value='Remover' id='btn_rem_turma' onclick="removeItem()" /><br>-->
-
+	
 	<form>
 		<ul id="lista_turmas" class="content">
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Matemática discreta</a><span class="close" title="Remover">&times;</span></li>
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Engenharia de Software</a><span class="close" title="Remover">&times;</span></li>
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Estrutura de dados</a><span class="close" title="Remover">&times;</span></li>
+			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Matemática discreta</a><span class="close" title="Remover turma">&times;</span></li>
+			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Engenharia de Software</a><span class="close" title="Remover truma">&times;</span></li>
+			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Estrutura de dados</a><span class="close" title="Remover turma">&times;</span></li>
 		<ul id="lista_turmas">
-	<!--
-	<span style="position: absolute; top: 500px; left: 450px;width: 500px; height: 0px">
-		<form autocomplete="off" accept="image/jpg, image/png">
-			<button class="turma">Adicionar</button>
-			<button class="turma">Alterar</button>
-			<button class="turma">Excluir</button>
-		</form>
-	</span>
--->
+	</form>
+
+	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_add_turma.php">
+		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Adicionar turma</button>
+	<form>
+	
 </body>
 </html>
