@@ -10,17 +10,14 @@
 	<?php
 		session_start();
 		// Recuperando os valores informados pelo professor
-		$codTurma = mysqli_real_escape_string($conexao, $_POST['cod_turma']);
-        $cpfProfessor = mysqli_real_escape_string($conexao, $_POST['cpf_prof']);		
-        $codDisc = mysqli_real_escape_string($conexao, $_POST['codDisc']);
-
+		$codDisc = mysqli_real_escape_string($conexao, $_POST['codDisc']);
 
 		// String consulta
-		$sql = "INSERT INTO Aula(cpfProf, codigoTurma, codDisc) VALUES('$cpfProfessor', '$codTurma','$codDisc')";	
+		$sql = "DELETE FROM Disciplina WHERE codDisc ="."'$codDisc'";	
 		
 		// Executa a Inserção e informa o resultado
 		if ($conexao->query($sql) === TRUE) {
-		    echo "Turma inserida com sucesso!";
+		    echo "Disciplina excluida com sucesso!";
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conexao->error;
 		}

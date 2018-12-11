@@ -28,24 +28,21 @@
 				$resultado = mysqli_query($conexao, $sql);
 
 				while ($linha = $resultado->fetch_assoc()){
-					echo "<li><a href='turma_qualquer_professor.html' class='link_turma' title='Ver detalhes da turma'>".$linha['codigoTurma']."|".$linha['codDisc']."|".$linha['cpfProf']."</a><span class='close' title='Remover turma'>&times;</span></li>";
+					echo "<li><a href='turma_qualquer_professor.php' class='link_turma' title='Ver detalhes da turma'>".$linha['codigoTurma']."|".$linha['codDisc']."|".$linha['cpfProf']."</a><span class='close' title='Remover turma'>&times;</span></li>";
 				}
 		
 			?>
-			<!--
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Matemática discreta</a><span class="close" title="Remover turma">&times;</span></li>
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Engenharia de Software</a><span class="close" title="Remover truma">&times;</span></li>
-			<li><a href="turma_qualquer_professor.html" class="link_turma" title="Ver detalhes da turma">Estrutura de dados</a><span class="close" title="Remover turma">&times;</span></li>
-			-->
 		<ul id="lista_turmas">
 	</form>
 
 	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_add_turma.php">
 		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Adicionar</button>
 	</form>
-    <form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_excluir_turma.php">
-		<button name="btn_add_turma" id='btn_excluir_turma' title="Clique para excluirturma">Excluir</button>
+    <form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_alterar_turma.php">
+		<button name="btn_add_turma" id='btn_excluir_turma' title="Clique para alterar uma turma">Alterar</button>
 	</form>
-	
+    <form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_excluir_turma.php">
+		<button name="btn_add_turma" id='btn_excluir_turma' title="Clique para excluir uma turma">Excluir</button>
+	</form>
 </body>
 </html>

@@ -25,25 +25,13 @@ CREATE TABLE IF NOT EXISTS Turma (
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS Aluno (
-    cpf char(11) NOT NULL,
-    data_entrada date NOT NULL,
-    FOREIGN KEY (cpf) REFERENCES Usuario(cpf)
-)CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-CREATE TABLE IF NOT EXISTS Professor(
-    cpf char(11) NOT NULL,
-    salario int NOT NULL,
-    FOREIGN KEY (cpf) REFERENCES Usuario(cpf)
-)CHARACTER SET utf8 COLLATE utf8_general_ci;
-
 CREATE TABLE IF NOT EXISTS Aula(
     cpfProf char(11) NOT NULL,
     codigoTurma varchar(3) NOT NULL,
     codDisc char(6) NOT NULL,
-    FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf),
-    FOREIGN KEY (codigoTurma) REFERENCES Turma(codigoTurma),
-    FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc),
+    FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (codigoTurma) REFERENCES Turma(codigoTurma) ON UPDATE CASCADE ON DELETE RESTRICT,
+    FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc) ON UPDATE CASCADE ON DELETE RESTRICT,
     PRIMARY KEY (cpfProf, codigoTurma, codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
@@ -51,17 +39,17 @@ CREATE TABLE IF NOT EXISTS Aula(
 
 insert into Disciplina (codDisc, nomeDisc) values
 ('DCC-ES', 'Engenharia de Software'),
-('DCC-SD', 'Sistemas Distribuídos'),
-('DCC-MD', 'Matemática Discreta'),
+('DCC-SD', 'Sistemas Distribuidos'),
+('DCC-MD', 'Matematica Discreta'),
 ('DCC-IHC', 'Interface Humano Computador'),
-('DCC-IA', 'Inteligência Artificial'),
+('DCC-IA', 'InteligEncia Artificial'),
 ('DCC-ED', 'Estrutura de Dados'),
-('DCC-IC', 'Introdução à Computação'),
+('DCC-IC', 'Introducao a Computacao'),
 ('DCC-BD', 'Banco de dados'),
 ('DCC-SGBD', 'Sistemas Gerenciadores de Bancos de Dados'),
-('DCC-LFA', 'Linguagens Formais e Autômatos'),
+('DCC-LFA', 'Linguagens Formais e Automatos'),
 ('DCC-AG', 'Algoritmos em Grafos'),
-('DCC-PPO', 'Práticas Programação Orientada a Objetos');
+('DCC-PPO', 'Praticas Programacao Orientada a Objetos');
 
 insert into Turma (codigoTurma, vagas) values
 ('10A', 30),
@@ -73,3 +61,4 @@ insert into Turma (codigoTurma, vagas) values
 
 insert into Usuario(cpf, nome, email, sexo, senha, data_nasc, modalidade) values
 ('11111111111', 'William', 'william@gmail.com','M','12345678', '1997/07/21', 'P');
+

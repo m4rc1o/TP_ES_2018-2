@@ -19,7 +19,7 @@
 		
 		// Executa a Inserção e informa o resultado
 		if ($conexao->query($sql) === TRUE) {
-		    echo "Nova turma excluida com sucesso!";
+		    echo "Turma excluida com sucesso!";
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conexao->error;
 		}

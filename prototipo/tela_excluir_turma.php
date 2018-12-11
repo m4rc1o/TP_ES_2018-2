@@ -10,7 +10,7 @@
 <body>
 	<?php include 'php/conexao.php';?>
 
-	<h1>AVAdesk - Cadastro de turma</h1>
+	<h1>AVAdesk - Excluir turma</h1>
 	<form autocomplete="on" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/php/excluir_turma.php" method="post">
 		
 		<h2>Por favor, preencha os campos abaixo:</h2>
