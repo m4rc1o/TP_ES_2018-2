@@ -26,7 +26,7 @@
 			//echo "Senha informada: ".$senhaInformada."\n";
 			//echo "Senha cadastrada: ".$linha['senha']."\n";
 			
-			if($linha['senha'] == md5($senhaInformada)){
+			if($linha['senha'] == ($senhaInformada)){
 				
 				if($linha['modalidade'] == 'A'){
 					//Carrega a tela inicial do aluno

@@ -12,8 +12,8 @@
 
 		$nomeServidor = "localhost";
 		$nomeUsuario = "root";
-		$senha = "1111011";
-		$nomeBD = "avadesk";
+		$senha = "lamp123";
+		$nomeBD = "avadesk1";
 
 
 		// Cria a conexao

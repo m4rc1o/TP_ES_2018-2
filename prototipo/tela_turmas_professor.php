@@ -14,21 +14,21 @@
 	?>
 
 	<h1><?php echo $_SESSION['nomeUsuario']; ?></h1>
-	<h2>Minhas Turmas</h2>
+	<h2>Turma|Disciplina|Professor</h2>
 	
 	<form>
 		<ul id="lista_turmas" nome="lista_turmas" class="content">
 			<?php 
 				
 				$cpfProf = $_SESSION['cpfUsuario'];
-				$sql = "SELECT codigoTurma FROM Turma";
+				$sql = "SELECT * FROM Aula";
 
 
 
 				$resultado = mysqli_query($conexao, $sql);
 
 				while ($linha = $resultado->fetch_assoc()){
-					echo "<li><a href='turma_qualquer_professor.html' class='link_turma' title='Ver detalhes da turma'>".$linha['codigoTurma']."</a><span class='close' title='Remover turma'>&times;</span></li>";
+					echo "<li><a href='turma_qualquer_professor.html' class='link_turma' title='Ver detalhes da turma'>".$linha['codigoTurma']."|".$linha['codDisc']."|".$linha['cpfProf']."</a><span class='close' title='Remover turma'>&times;</span></li>";
 				}
 		
 			?>
@@ -41,8 +41,11 @@
 	</form>
 
 	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_add_turma.php">
-		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Adicionar turma</button>
-	<form>
+		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Adicionar</button>
+	</form>
+    <form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_excluir_turma.php">
+		<button name="btn_add_turma" id='btn_excluir_turma' title="Clique para excluirturma">Excluir</button>
+	</form>
 	
 </body>
 </html>

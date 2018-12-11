@@ -1,5 +1,5 @@
-CREATE SCHEMA avadesk;
-USE avadesk;
+CREATE SCHEMA avadesk1;
+USE avadesk1;
 
 CREATE TABLE IF NOT EXISTS Usuario ( -- professor e aluno tem os mesmos atributos mas para envolver 3 tabelas vamos ter que fazer herança
     cpf char(11) NOT NULL,
@@ -21,11 +21,7 @@ CREATE TABLE IF NOT EXISTS Disciplina (
 CREATE TABLE IF NOT EXISTS Turma (
     codigoTurma varchar(20) NOT NULL,
     vagas int NOT NULL,
-    codDisc varchar(8) NOT NULL,
-    cpfProf char(11) NOT NULL,
-    FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc),
-    FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf),
-    PRIMARY KEY (codigoTurma, codDisc)
+    PRIMARY KEY (codigoTurma)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
@@ -41,15 +37,17 @@ CREATE TABLE IF NOT EXISTS Professor(
     FOREIGN KEY (cpf) REFERENCES Usuario(cpf)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS AlunoTurma (
-    cpfAluno char(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS Aula(
+    cpfProf char(11) NOT NULL,
     codigoTurma varchar(3) NOT NULL,
     codDisc char(6) NOT NULL,
+    FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf),
     FOREIGN KEY (codigoTurma) REFERENCES Turma(codigoTurma),
-    FOREIGN KEY (codDisc) REFERENCES Turma(codDisc),
-    FOREIGN KEY (cpfAluno) REFERENCES Aluno(cpf),
-    PRIMARY KEY (cpfAluno, codigoTurma, codDisc)
+    FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc),
+    PRIMARY KEY (cpfProf, codigoTurma, codDisc)
 )CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
 
 insert into Disciplina (codDisc, nomeDisc) values
 ('DCC-ES', 'Engenharia de Software'),
@@ -64,3 +62,14 @@ insert into Disciplina (codDisc, nomeDisc) values
 ('DCC-LFA', 'Linguagens Formais e Autômatos'),
 ('DCC-AG', 'Algoritmos em Grafos'),
 ('DCC-PPO', 'Práticas Programação Orientada a Objetos');
+
+insert into Turma (codigoTurma, vagas) values
+('10A', 30),
+('10B', 45),
+('14A', 40),
+('20A', 60),
+('9C', 15),
+('5D', 10);
+
+insert into Usuario(cpf, nome, email, sexo, senha, data_nasc, modalidade) values
+('11111111111', 'William', 'william@gmail.com','M','12345678', '1997/07/21', 'P');

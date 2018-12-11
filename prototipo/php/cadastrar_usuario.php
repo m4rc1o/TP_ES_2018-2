@@ -22,7 +22,7 @@
 		$modalidade = mysqli_real_escape_string($conexao, $_POST['modalidade']);
 		
 		// String consulta
-		$sql = "INSERT INTO Usuario(cpf, nome, email, senha, sexo, data_nasc, modalidade) VALUES ('$cpf', '$nome', '$email', md5('$senha'), '$sexo', '$data_nasc', '$modalidade')";
+		$sql = "INSERT INTO Usuario(cpf, nome, email, senha, sexo, data_nasc, modalidade) VALUES ('$cpf', '$nome', '$email', '$senha', '$sexo', '$data_nasc', '$modalidade')";
 
 		//$result =  ($conexao, $sql);
 		
