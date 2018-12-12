@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário HTML - Cadastro</title>
+	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
+	<script type="text/javascript" src="http://localhost/TP_ES_2018-2/prototipo/js/funcoes2.js"></script>
+</head>
+
+<body>
+	<h1 id="nomeTurma">Esta é uma turma</h1>
+	<script type="text/javascript">
+		var urlParams = new URLSearchParams(window.location.search);
+		var codTurma = urlParams.get('codTurma');
+		document.getElementById("nomeTurma").innerHTML = codTurma;
+		window.onload = carregarDadosTurma(codTurma);
+		function editarTurma(){
+			var inputCodTurma = document.getElementById("codTurma");
+			inputCodTurma.removeAttribute('disabled');
+			carregarDadosTurma(codTurma);
+		}
+	</script>
+	<form>
+		Código da turma:
+		<span class="input-group-addon"><i class="fa fa-user" ></i></span>
+		<input type="text" class="form-control" id="codTurma" value="xxxxxxxx" disabled=true><br></h2>
+		Código da Disciplina:
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" class="form-control" id="codDisc" value="xxxxxxxx" disabled><br></h2>
+		CPF do professor:
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" class="form-control" id="cpfProf" value="xxxxxxxx" disabled><br></h2>
+		Oferta de vagas:
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" class="form-control" id="qtdVagas" value="xxxxxxxx" disabled><br></h2>
+	</form>
+	
+	<form autocomplete="off" accept="image/jpg, image/png">
+		<button type="button" name="btn_editar_turma" id='btn_editar_turma' onclick='editarTurma();' >Editar</button>
+		<button type="button" name="btn_salvar" id='btn_salvar' onclick='alterarTurma();'>Salvar Alteracões</button>
+		<button type="button" name="btn_excluir_turma" id='btn_excluir_turma' onclick='deletarTurma();'>Excluir</button>
+		<button type="button" name="btn_home" id='btn_home' onclick='irParaHome();'>Voltar para a home</button>
+	<form>
+	
+</body>
+</html>

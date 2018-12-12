@@ -34,7 +34,7 @@
 					$_SESSION['modalidade'] = "A";
 				}else if($linha['modalidade'] == 'P'){
 					//Carrega a tela inicial do professor
-					header('Location: ../tela_turmas_professor.php');
+					header('Location: http://localhost/TP_ES_2018-2/prototipo/tela_turmas_professor.html');
 					$_SESSION['modalidade'] = "P";
 				}
 				

@@ -29,7 +29,7 @@
 			<li><a href="turma_qualquer_aluno.html" class="link_turma" title="Ver detalhes da turma">Matemática discreta</a><span class="close" title="Desinscrever-se">&times;</span></li>
 			<li><a href="turma_qualquer_aluno.html" class="link_turma" title="Ver detalhes da turma">Engenharia de Software</a><span class="close" title="Desinscrever-se">&times;</span></li>
 			<li><a href="turma_qualquer_aluno.html" class="link_turma" title="Ver detalhes da turma">Estrutura de dados</a><span class="close" title="Desinscrever-se">&times;</span></li>
-		<ul id="lista_turmas">
+		</ul>
 
 
 		<!--

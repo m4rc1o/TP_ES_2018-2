@@ -12,8 +12,8 @@
 		// Recuperando os valores informados pelo professor
 		$codTurma = mysqli_real_escape_string($conexao, $_POST['cod_turma']);
 		$qtdVagas = mysqli_real_escape_string($conexao, $_POST['vagas']);
-		$codDisc = mysqli_real_escape_string($conexao, $_POST['codDisc']);
-		$cpfProfessor = $_SESSION['cpfUsuario'];
+		$codDisc = mysqli_real_escape_string($conexao, $_POST['cod_disc']);
+		$cpfProfessor = mysqli_real_escape_string($conexao, $_POST['nomes_prof']);
 
 		// String consulta
 		$sql = "INSERT INTO Turma(codigoTurma, vagas, codDisc, cpfProf) VALUES('$codTurma', '$qtdVagas', '$codDisc', '$cpfProfessor')";	

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS Turma (
     codigoTurma varchar(20) NOT NULL,
     vagas int NOT NULL,
     codDisc varchar(8) NOT NULL,
-    cpfProf char(11) NOT NULL,
+    cpfProf char(11),
     FOREIGN KEY (codDisc) REFERENCES Disciplina(codDisc),
     FOREIGN KEY (cpfProf) REFERENCES Usuario(cpf),
     PRIMARY KEY (codigoTurma, codDisc)

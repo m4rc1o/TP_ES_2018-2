@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
+	<script type="text/javascript" src="http://localhost/TP_ES_2018-2/prototipo/js/funcoes2.js"></script>
+	<title>Formulário HTML - Cadastro</title>
+</head>
+
+<body>
+	<script>
+		//Exibe o nome do usuário logado no elemento de id="nomeUsuario"
+		setaNomeUsuarioLogado();
+	</script>
+
+	<h1 id="nomeUsuario">Nome do Usuário</h1>
+
+	<h2 >Minhas Turmas</h2>
+	
+	<form>
+		<ul id="lista_turmas" nome="lista_turmas" class="content">
+
+			<!--Requisitando as turmas do usuário logado ao servidor-->
+			<script type="text/javascript">
+				carregarTurmasProf();
+			</script>
+			
+		
+		</ul>
+	</form>
+
+
+	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_add_turma.html">
+		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Adicionar turma</button>
+		<button type="button" name="btn_sair" id='btn_sair' title="Clique para adicionar uma nova turma" onClick='sair();' >Sair</button>
+	<form>
+	
+</body>
+</html>

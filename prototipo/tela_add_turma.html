@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
 	<title>Formulário HTML - Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="css/format_tl_cadastrar.css">
-	<script type="text/javascript" src="js/funcoes1.js"></script>
+	<script type="text/javascript" src="http://localhost/TP_ES_2018-2/prototipo/js/funcoes2.js"></script>
 </head>
 
 <body>
@@ -21,14 +21,18 @@
 		Vagas disponiveis:<br>
 		<input type="number" name="vagas" placeholder="A quantidade de vagas ofertadas" maxlength="3" required><br><br>
 		
+		Selecione o professor:<br>
+		<select id="nomes_prof" name="nomes_prof">
+			<script type="text/javascript">
+				carregarProfessores();
+			</script>
+		</select>
+
 		Selecione uma disciplina:<br>
-		<select name="codDisc">
-			<?php 
-				$sql = mysqli_query($conexao, "SELECT codDisc FROM Disciplina");
-				while ($linha = $sql->fetch_assoc()){
-					echo "<option value=".$linha['codDisc'].">".$linha['codDisc']."</option>";
-				}
-			?>
+		<select id="cod_disc" name="cod_disc">
+			<script type="text/javascript">
+				carregarDisciplinas();
+			</script>
 		</select>
 
 		<br><br><br>

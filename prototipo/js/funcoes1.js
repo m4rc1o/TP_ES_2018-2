@@ -1,3 +1,8 @@
+function nada(){
+    alert("Nada");
+}
+
+
 function carregarTelaIni(){
 	var modAluno = document.getElementById("mod_aluno");
 	var modProfessor = document.getElementById("mod_professor");
@@ -55,4 +60,32 @@ function addItemListaProfessor() {
 
 function exibirTurmasDisponiveis() {
 	 var turma = "<?=$turma?>";
+}
+
+//Exibe o nome do usuário logado no topo da página
+function setaNomeUsuarioLogado(){
+    var ajax = new XMLHttpRequest();
+    var metodo = "GET";
+    var url = "http://localhost/TP_ES_2018-2/prototipo/php/ger_reqs.php?reqId=nomeUsuario";
+    var assinc = true;
+
+    //Criando a requisição
+    ajax.open(metodo, url, assinc);
+
+    //Enviando a requisição
+    ajax.send();
+
+    //recebendo a resposta de php/ger_reqs.php
+    ajax.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+
+            //Convertendo a resposta do formato JSON para um objeto javascript
+            var resposta = JSON.parse(this.response);
+
+            //Setando o nome do usuário para o nome do usuário logado
+            //O título com o nome do usuário deve ter Id = "nomeUsuario"
+            var nomeUsuario = document.getElementById("nomeUsuario");
+            nomeUsuario.innerHTML = resposta;
+        }
+    }
 }
