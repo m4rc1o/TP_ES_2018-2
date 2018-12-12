@@ -11,14 +11,12 @@
 		session_start();
 		// Recuperando os valores informados pelo professor		
         $codDisc = mysqli_real_escape_string($conexao, $_POST['codDisc']);
-        $nomeDisc = mysqli_real_escape_string($conexao, $_POST['nomeDisc']);
-
 		// String consulta
-		$sql = "INSERT INTO Disciplina(codDisc, nomeDisc) VALUES('$codDisc', '$nomeDisc')";	
+		$sql = "DELETE FROM Disciplina WHERE codDisc="."'$codDisc'";
 		
 		// Executa a Inserção e informa o resultado
 		if ($conexao->query($sql) === TRUE) {
-		    echo "Disciplina inserida com sucesso!";
+		    echo "Disciplina excluida com sucesso!";
 		} else {
 		    echo "Erro: " . $sql . "<br>" . $conexao->error;
 		}

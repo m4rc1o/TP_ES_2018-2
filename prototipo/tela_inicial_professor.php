@@ -14,8 +14,8 @@
 	?>
 
 	<h1><?php echo $_SESSION['nomeUsuario']; ?></h1>
-	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_turmas_professor.php">
-		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova turma">Aulas</button>
+	<form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_aulas_professor.php">
+		<button name="btn_add_turma" id='btn_add_turma' title="Clique para adicionar uma nova aula">Aulas</button>
     </form>
 
     <form autocomplete="off" accept="image/jpg, image/png" action="http://localhost/TP_ES_2018-2/prototipo/tela_disciplinas_professor.php">
