@@ -26,7 +26,7 @@
 			//echo "Senha informada: ".$senhaInformada."\n";
 			//echo "Senha cadastrada: ".$linha['senha']."\n";
 			
-			if($linha['senha'] == md5($senhaInformada)){
+			if($linha['senha'] == ($senhaInformada)){
 				
 				if($linha['modalidade'] == 'A'){
 					//Carrega a tela inicial do aluno
@@ -34,7 +34,7 @@
 					$_SESSION['modalidade'] = "A";
 				}else if($linha['modalidade'] == 'P'){
 					//Carrega a tela inicial do professor
-					header('Location: http://localhost/TP_ES_2018-2/prototipo/tela_turmas_professor.html');
+					header('Location: ../tela_inicial_professor.php');
 					$_SESSION['modalidade'] = "P";
 				}
 				
